@@ -1,0 +1,11 @@
+AddDefaultCharset utf-8
+Options All -Indexes
+
+<Files ~ "(\.inc\.php|\.tpl|\.tpl\.php|\.auto\.php|\.auto\.xml)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.+?\ [^?]+\.php[?\ ]
+RewriteRule \.php$ - [F]
